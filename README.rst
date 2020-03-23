@@ -26,9 +26,8 @@ Contributing
 ------------
 Clone this repo to the folder, than:
 
-`mkvirtualenv convertme -p python3`
-`pip install -e .`
-
+mkvirtualenv convertme -p python3
+pip install -e .
 
 Features
 --------

@@ -14,8 +14,6 @@ ConvertMe
         :alt: Documentation Status
 
 
-
-
 Simple dataset convertor in Python
 
 
@@ -24,11 +22,13 @@ Simple dataset convertor in Python
 
 Contributing
 ------------
-Clone this repo to the folder, than:
+Clone this repo to the folder, then:
 
-mkvirtualenv convertme -p python3
+.. code:: bash
 
-pip install -e .
+        mkvirtualenv convertme -p python3
+
+        pip install -e .
 
 Features
 --------

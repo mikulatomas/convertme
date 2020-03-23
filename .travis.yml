@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.7"
+  - "3.8"
+install:
+  - python setup.py develop
+script:
+  - pytest --cov=./ --benchmark-skip
+after_success:
+  - codecov

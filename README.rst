@@ -17,8 +17,7 @@ ConvertMe
 ..         :alt: Documentation Status
 
 
-Simple dataset convertor in Python.
-
+Simple dataset convertor in Python. Not released on PyPy yet.
 
 * Free software: MIT license
 .. * Documentation: https://convertme.readthedocs.io.

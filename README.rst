@@ -3,8 +3,8 @@ ConvertMe
 =========
 
 
-.. image:: https://img.shields.io/pypi/v/convertme.svg
-        :target: https://pypi.python.org/pypi/convertme
+.. .. image:: https://img.shields.io/pypi/v/convertme.svg
+..         :target: https://pypi.python.org/pypi/convertme
 
 .. image:: https://img.shields.io/travis/mikulatomas/convertme.svg
         :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=development
@@ -12,18 +12,18 @@ ConvertMe
 .. image:: https://codecov.io/gh/mikulatomas/convertme/branch/development/graph/badge.svg
   :target: https://codecov.io/gh/mikulatomas/convertme
 
-.. image:: https://readthedocs.org/projects/convertme/badge/?version=latest
-        :target: https://convertme.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
+.. .. image:: https://readthedocs.org/projects/convertme/badge/?version=latest
+..         :target: https://convertme.readthedocs.io/en/latest/?badge=latest
+..         :alt: Documentation Status
 
 
-Simple dataset convertor in Python
+Simple dataset convertor in Python.
 
 
 * Free software: MIT license
-* Documentation: https://convertme.readthedocs.io.
+.. * Documentation: https://convertme.readthedocs.io.
 
-Contributing
+Development
 ------------
 Clone this repo to the folder, then:
 
@@ -31,12 +31,17 @@ Clone this repo to the folder, then:
 
         mkvirtualenv convertme -p python3
 
+        workon convertme #if is not actived
+
         pip install -e .
 
-Features
+        pip install -r requirements_dev.txt
+
+Supported formats
 --------
 
-* TODO
+* csv
+* burmeister
 
 Credits
 -------

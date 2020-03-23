@@ -3,6 +3,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+from convertme import __author__, __email__, __version__, __license__
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -17,8 +18,8 @@ setup_requirements = ['pytest-runner', ]
 test_requirements = ['pytest>=3', ]
 
 setup(
-    author="Tomáš Mikula",
-    author_email='mail@tomasmikula.cz',
+    author=__author__,
+    author_email=__email__,
     python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -36,7 +37,7 @@ setup(
         ],
     },
     install_requires=requirements,
-    license="MIT license",
+    license=__license__,
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='convertme',
@@ -46,6 +47,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/mikulatomas/convertme',
-    version='0.1.0',
+    version=__version__,
     zip_safe=False,
 )

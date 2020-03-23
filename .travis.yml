@@ -6,5 +6,7 @@ install:
   - python setup.py develop
 script:
   - pytest --cov=./
+before_install:
+  - pip install codecov pytest-cov pytest-runner
 after_success:
   - codecov

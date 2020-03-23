@@ -26,7 +26,7 @@ Contributing
 ------------
 Clone this repo to the folder, than:
 
-
+.. code::
         mkvirtualenv convertme -p python3
         pip install -e .
 

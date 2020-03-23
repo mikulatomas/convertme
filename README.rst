@@ -22,6 +22,14 @@ Simple dataset convertor in Python
 * Free software: MIT license
 * Documentation: https://convertme.readthedocs.io.
 
+Contributing
+------------
+Clone this repo to the folder, than:
+
+```
+mkvirtualenv convertme -p python3
+pip install -e .
+```
 
 Features
 --------

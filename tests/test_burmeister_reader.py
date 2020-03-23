@@ -19,9 +19,9 @@ X.X
 
     dataset_file.write_text(CONTENT)
 
-    with open(dataset_file, newline='') as cxtfile:
+    with open(dataset_file, newline='') as cxt_file:
         burmeister_reader = BurmeisterReader()
-        dataset = burmeister_reader.read(cxtfile)
+        dataset = burmeister_reader.read(cxt_file)
 
     assert dataset_file.read_text() == CONTENT
     assert dataset.bools == [[True, False, True], [False, True, False]]

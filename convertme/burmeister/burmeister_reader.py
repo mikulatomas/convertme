@@ -12,17 +12,17 @@ class BurmeisterReader(ReaderInterface):
         bools = []
         lines = file.read().splitlines()
         if lines[0]!="B":
-            raise ValueError("""First line has to be "B" """)
+            raise ValueError("First line has to be \"B\"")
         
-        objCount = int(lines[2])
-        attCount = int(lines[3])
+        obj_count = int(lines[2])
+        att_count = int(lines[3])
         objects = []
         attributes = []
-        for i in range(0, objCount):
-            objects.append(lines[4+i])
-        for i in range(0, attCount):
-            attributes.append(lines[4+objCount+i])
-        for i in range(objCount + attCount + 4, len(lines)):
+        for i in range(0, obj_count):
+            objects.append(lines[4 + i])
+        for i in range(0, att_count):
+            attributes.append(lines[4 + obj_count + i])
+        for i in range(obj_count + att_count + 4, len(lines)):
             bools.append(list(map(self.__process_char, lines[i])))
 
 

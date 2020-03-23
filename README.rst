@@ -9,8 +9,8 @@ ConvertMe
 .. image:: https://img.shields.io/travis/mikulatomas/convertme.svg
         :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=development
 
-.. image:: https://codecov.io/gh/mikulatomas/convertme/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/mikulatomas/convertme
+.. image:: https://codecov.io/gh/mikulatomas/convertme/branch/development/graph/badge.svg
+  :target: https://codecov.io/gh/mikulatomas/convertme
 
 .. image:: https://readthedocs.org/projects/convertme/badge/?version=latest
         :target: https://convertme.readthedocs.io/en/latest/?badge=latest

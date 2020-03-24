@@ -3,11 +3,34 @@ import csv
 
 
 class CsvReader(ReaderInterface):
-    def __init__(self, objects=[], attributes=[], set_true_values=set('1'), delimiter=';'):
-        self.objects = objects
-        self.attributes = attributes
+    def __init__(self, objects=None, attributes=None, set_true_values=set(['1', 1]),
+                 delimiter=';', objects_col=None, attributes_row=None):
+
+        if objects and objects_col:
+            raise ValueError(
+                "Object labels and objects colum cannot be specified in the same time.")
+
+        if attributes and attributes_row:
+            raise ValueError(
+                "Attribute labels and attribute row cannot be specified in the same time.")
+
+        if type(set_true_values) is not set:
+            raise ValueError("set_true_values must be a set.")
+
+        if objects is None:
+            self.objects = []
+        else:
+            self.objects = objects
+
+        if attributes is None:
+            self.attributes = []
+        else:
+            self.attributes = attributes
+
         self.set_true_values = set_true_values
         self.delimiter = delimiter
+        self.objects_col = objects_col
+        self.attributes_row = attributes_row
 
     def __process_char(self, char):
         return char in self.set_true_values
@@ -15,12 +38,25 @@ class CsvReader(ReaderInterface):
     def read(self, file):
         # default Python csv reader
         csv_reader = csv.reader(file, delimiter=self.delimiter)
+
         bools = []
 
-        for row in csv_reader:
-            bools.append(list(map(self.__process_char, row)))
+        # if labels are specified, always prefer them
+        # if labels are NOT specified, but objects_col or attributes_row is specified, extract them
+        # generate the rest of the labels
 
-        # test empty list
+        for idx, row in enumerate(csv_reader):
+            if self.attributes_row == idx:
+                # remove first string from header of the file -- 'id' etc.
+                self.attributes = row[1:]
+            else:
+                # pop object label
+                if type(self.objects_col) == int:
+                    self.objects.append(row.pop(self.objects_col))
+
+                bools.append(list(map(self.__process_char, row)))
+
+        # generate labels if needed
         if not self.objects:
             self.objects = [str(label) for label in range(len(bools))]
 

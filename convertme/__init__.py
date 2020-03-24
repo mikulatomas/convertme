@@ -6,6 +6,7 @@ from .writer_interface import WriterInterface
 from .csv.csv_reader import CsvReader
 from .csv.csv_writer import CsvWriter
 from .burmeister.burmeister_reader import BurmeisterReader
+from .burmeister.burmeister_writer import BurmeisterWriter
 
 __author__ = """Tomáš Mikula"""
 __email__ = 'mail@tomasmikula.cz'

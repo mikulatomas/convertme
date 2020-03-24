@@ -1,5 +1,5 @@
 =========
-ConvertMe
+ConvertMe -- Ayoyoyo Wololo
 =========
 
 
@@ -18,6 +18,9 @@ ConvertMe
 
 
 Simple dataset convertor in Python. Not released on PyPy yet.
+
+.. image:: https://img.youtube.com/vi/7CIGb1Ti06k/0.jpg
+  :target: https://www.youtube.com/watch?v=7CIGb1Ti06k
 
 * Free software: MIT license
 .. * Documentation: https://convertme.readthedocs.io.

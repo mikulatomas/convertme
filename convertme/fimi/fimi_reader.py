@@ -28,7 +28,7 @@ class FimiReader(ReaderInterface):
 
             bools.append(bools_row)
 
-        return Dataset([i for i in range(0, len(bools))],
-                       [i for i in range(0, max_attribute + 1)],
+        return Dataset(list(map(str, range(len(bools)))),
+                       list(map(str, range(max_attribute + 1))),
                        bools)
 

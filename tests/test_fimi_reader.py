@@ -55,3 +55,18 @@ def test_fimi_reader_empty_line(tmp_path):
                               False, False], [False, True, True, False, True]]
     assert dataset.attributes == list(map(str, range(5)))
     assert dataset.objects == ['0', '1']
+
+def test_fimi_reader_multiline_dataset(tmp_path):
+    CONTENT = """1 2 4
+0 1 2 3"""
+
+    dataset_file = tmp_path / "test_dataset.dat"
+    dataset_file.write_text(CONTENT)
+    with open(dataset_file, newline='') as fimifile:
+        fimi_reader = FimiReader()
+        dataset = fimi_reader.read(fimifile)
+    assert dataset_file.read_text() == CONTENT
+    assert dataset.bools == [[False, True, True,
+                              False, True], [True, True, True, True, False]]
+    assert dataset.attributes == list(map(str, range(5)))
+    assert dataset.objects == ['0', '1']

@@ -5,9 +5,11 @@ from convertme import FimiReader
 def check_reader(CONTENT, tmp_path):
     dataset_file = tmp_path / "test_dataset.dat"
     dataset_file.write_text(CONTENT)
+
     with open(dataset_file, newline='') as fimifile:
         fimi_reader = FimiReader()
         dataset = fimi_reader.read(fimifile)
+
     assert dataset_file.read_text() == CONTENT
     assert dataset.bools == [[False, True, True, False, True]]
     assert dataset.attributes == list(map(str, range(5)))
@@ -49,6 +51,7 @@ def test_fimi_reader_empty_line(tmp_path):
         fimi_reader = FimiReader()
         dataset = fimi_reader.read(fimifile)
     assert dataset_file.read_text() == CONTENT
-    assert dataset.bools == [[False, False, False, False, False], [False, True, True, False, True]]
+    assert dataset.bools == [[False, False, False,
+                              False, False], [False, True, True, False, True]]
     assert dataset.attributes == list(map(str, range(5)))
     assert dataset.objects == ['0', '1']

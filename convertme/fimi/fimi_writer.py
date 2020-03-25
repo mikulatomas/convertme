@@ -3,11 +3,18 @@ from convertme import WriterInterface, Dataset
 
 class FimiWriter(WriterInterface):
 
-    def write(self, dataset: Dataset, output):
-        for row in dataset.bools:
-            content = ""
+    def write(self, dataset, output):
+        lines = []
 
-            for attribute in range(0, len(row)):
+        for row in dataset.bools:
+            attributes = []
+
+            for attribute, _ in enumerate(row):
                 if row[attribute]:
-                    content += "{}".format(attribute) if (attribute == len(row) - 1) else "{} ".format(attribute)
-            output.write(content)
+                    attributes.append(str(attribute))
+
+            # remove f last space from line
+            # ' '.join() is the fastest way to concatenate string
+            lines.append(' '.join(attributes))
+
+        output.write('\n'.join(lines))

@@ -5,22 +5,17 @@ class BurmeisterWriter(WriterInterface):
     def __process_val(self, b):
         return "X" if b else "."
 
-    def __write_list(self, lst, output):
-        for s in lst:
-            output.write(s)
-            output.write("\n")
-
     def write(self, dataset, output):
         content = ["B", "", str(len(dataset.objects)),
                    str(len(dataset.attributes))]
 
-        self.__write_list(content, output)
-        self.__write_list(dataset.objects, output)
-        self.__write_list(dataset.attributes, output)
+        output.writelines('\n'.join(content) + '\n')
+        output.writelines('\n'.join(dataset.objects) + '\n')
+        output.writelines('\n'.join(dataset.attributes) + '\n')
 
         data = []
 
         for row in dataset.bools:
             data.append(''.join(list(map(self.__process_val, row))))
 
-        self.__write_list(data, output)
+        output.writelines('\n'.join(data) + '\n')

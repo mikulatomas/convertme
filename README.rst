@@ -44,6 +44,7 @@ Supported formats
 
 * csv
 * burmeister
+* fimi
 
 Credits
 -------

@@ -3,7 +3,7 @@ import csv
 
 
 class CsvReader(ReaderInterface):
-    def __init__(self, objects=None, attributes=None, set_true_values=set(['1', 1]),
+    def __init__(self, objects=None, attributes=None, set_true_values=None,
                  delimiter=',', objects_col=None, attributes_row=None):
 
         if objects and objects_col:
@@ -13,6 +13,9 @@ class CsvReader(ReaderInterface):
         if attributes and attributes_row:
             raise ValueError(
                 "Attribute labels and attribute row cannot be specified in the same time.")
+
+        if set_true_values is None:
+            set_true_values = set(['1', 1])
 
         if type(set_true_values) is not set:
             raise ValueError("set_true_values must be a set.")

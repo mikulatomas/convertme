@@ -17,4 +17,4 @@ class FimiWriter(WriterInterface):
             # ' '.join() is the fastest way to concatenate string
             lines.append(' '.join(attributes))
 
-        output.write('\n'.join(lines))
+        output.write('\n'.join(lines) + '\n')

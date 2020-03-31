@@ -16,6 +16,6 @@ def test_csv_writer(tmp_path):
 
     csv_writer.write(dataset, output)
 
-    OUTPUT = "objects;0;1;2;3\r\n0;1;0;1;0\r\n"
+    OUTPUT = "objects,0,1,2,3\r\n0,1,0,1,0\r\n"
 
     assert output.getvalue() == OUTPUT

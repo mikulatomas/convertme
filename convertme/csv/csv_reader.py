@@ -4,7 +4,7 @@ import csv
 
 class CsvReader(ReaderInterface):
     def __init__(self, objects=None, attributes=None, set_true_values=set(['1', 1]),
-                 delimiter=';', objects_col=None, attributes_row=None):
+                 delimiter=',', objects_col=None, attributes_row=None):
 
         if objects and objects_col:
             raise ValueError(

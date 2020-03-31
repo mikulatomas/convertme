@@ -3,7 +3,7 @@ import csv
 
 
 class CsvWriter(WriterInterface):
-    def __init__(self, delimiter=';'):
+    def __init__(self, delimiter=','):
         self.delimiter = delimiter
 
     def write(self, dataset, output):

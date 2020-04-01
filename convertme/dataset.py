@@ -15,7 +15,7 @@ class Dataset:
     def attributes(self):
         return self.metadata.attributes
 
-    def __init__(self, objects, attributes, bools, src_url=""):
+    def __init__(self, objects, attributes, bools, src_url=None):
         if not objects:
             raise ValueError("objects cannot be empty")
         if not attributes:

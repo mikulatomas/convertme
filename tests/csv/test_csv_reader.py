@@ -11,7 +11,7 @@ TEST_DATA_DIR = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR))
-def test_reader(data_file, json_file):
+def test_csv_reader(data_file, json_file):
     # Load dataset file
     with open(data_file, newline='') as f:
         csv_reader = CsvReader()

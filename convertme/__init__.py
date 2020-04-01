@@ -1,5 +1,6 @@
 """Top-level package for ConvertMe."""
 
+from .metadata import Metadata
 from .dataset import Dataset
 from .reader_interface import ReaderInterface
 from .writer_interface import WriterInterface
@@ -9,7 +10,6 @@ from .burmeister.burmeister_reader import BurmeisterReader
 from .burmeister.burmeister_writer import BurmeisterWriter
 from .fimi.fimi_reader import FimiReader
 from .fimi.fimi_writer import FimiWriter
-from .metadata import Metadata
 
 __author__ = 'Radek Janoštík, Tomáš Mikula, Roman Vyjídáček'
 __email__ = 'radek.janostik@upol.cz, mail@tomasmikula.cz, r.vyjidacek@gmail.com'

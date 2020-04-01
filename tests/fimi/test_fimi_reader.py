@@ -9,12 +9,14 @@ TEST_DATA_DIR = os.path.join(
     'test_data_reader',
 )
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR))
+
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR))
 def test_csv_reader(data_file, json_file):
     # Load dataset file
     with open(data_file, newline='') as f:
-        csv_reader = FimiReader()
-        dataset = csv_reader.read(f)
+        fimi_reader = FimiReader()
+        dataset = fimi_reader.read(f)
 
     # Load expected output
     with open(json_file) as f:

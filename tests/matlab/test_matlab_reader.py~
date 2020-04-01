@@ -1,0 +1,31 @@
+from __future__ import unicode_literals
+from distutils import dir_util
+from pytest import fixture
+import os
+import pytest
+from convertme import MatlabReader
+
+
+@fixture
+def datadir(tmp_path, request):
+    '''
+    Fixture responsible for searching a folder with the same name of test
+    module and, if available, moving all contents to a temporary directory so
+    tests can use them freely.
+    '''
+    filename = request.module.__file__
+    test_dir, _ = os.path.splitext(filename)
+
+    if os.path.isdir(test_dir):
+        dir_util.copy_tree(test_dir, str(tmp_path))
+
+    return tmp_path
+
+
+def test_matlab_reader(datadir):
+    reader = MatlabReader()
+    matrix_file = str(datadir / 'testmat.mat')
+    dataset = reader.read(matrix_file)
+    assert dataset.bools == [[1, 0, 1, 0], [0, 1, 1, 1], [1, 1, 0, 1]]
+    assert dataset.objects == ['0', '1', '2']
+    assert dataset.attributes == ['0', '1', '2', '3']

@@ -1,0 +1,10 @@
+from convertme import ReaderInterface, Dataset
+from mat4py import loadmat
+
+
+class MatlabReader(ReaderInterface):
+
+    def read(self, file):
+
+        matlab_data = loadmat(file)
+        print(matlab_data)

@@ -3,10 +3,10 @@ python:
   - "3.7"
   - "3.8"
 install:
-  - python setup.py develop
+  - python setup.py test
 script:
   - pytest --cov=./
 before_install:
-  - pip install codecov pytest-cov pytest-runner
+  - pip install codecov pytest-cov
 after_success:
   - codecov

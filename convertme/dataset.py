@@ -1,4 +1,5 @@
 import json
+from convertme import Metadata
 
 
 class Dataset:
@@ -6,7 +7,15 @@ class Dataset:
     Inner structure of dataset
     """
 
-    def __init__(self, objects, attributes, bools):
+    @property
+    def objects(self):
+        return self.metadata.objects
+
+    @property
+    def attributes(self):
+        return self.metadata.attributes
+
+    def __init__(self, objects, attributes, bools, src_url=""):
         if not objects:
             raise ValueError("objects cannot be empty")
         if not attributes:
@@ -26,8 +35,7 @@ class Dataset:
             raise ValueError(
                 "number of attributes is not equal to number of columns")
 
-        self.objects = objects
-        self.attributes = attributes
+        self.metadata = Metadata(objects, attributes, bools, src_url)
         self.bools = bools
 
     def to_json(self):

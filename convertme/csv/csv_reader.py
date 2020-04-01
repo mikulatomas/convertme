@@ -51,7 +51,10 @@ class CsvReader(ReaderInterface):
         for idx, row in enumerate(csv_reader):
             if self.attributes_row == idx:
                 # remove first string from header of the file -- 'id' etc.
-                self.attributes = row[1:]
+                if self.objects_col is not None:
+                    self.attributes = row[1:]
+                else:
+                    self.attributes = row
             else:
                 # pop object label
                 if type(self.objects_col) == int:

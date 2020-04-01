@@ -1,3 +1,6 @@
+import json
+
+
 class Dataset:
     """
     Inner structure of dataset
@@ -26,3 +29,8 @@ class Dataset:
         self.objects = objects
         self.attributes = attributes
         self.bools = bools
+
+    def to_json(self):
+        return json.dumps({'objects': self.objects,
+                           'attributes': self.attributes,
+                           'bools': self.bools})

@@ -37,7 +37,7 @@ Clone this repo to the folder, then:
 
         pip install -e .
 
-        pip install -r requirements_dev.txt
+        python setup.py test
 
 Supported formats
 --------

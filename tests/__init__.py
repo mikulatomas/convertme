@@ -8,7 +8,9 @@ def load_all_test_files(test_data_dir):
 
     directory = os.fsencode(test_data_dir)
 
-    for file in os.listdir(directory):
+    lst_dir = os.listdir(directory)
+    lst_dir.sort()
+    for file in lst_dir:
         filename = os.fsdecode(file)
         filepath = os.path.join(test_data_dir, filename)
         if filename.endswith(".json"):

@@ -18,7 +18,7 @@ class Metadata:
                            'number_of_objects': self.number_of_objects,
                            'number_of_attributes': self.number_of_attributes,
                            'density': self.density,
-                           'sourceURL': self.src_url})
+                           'src_url': self.src_url})
 
     def __calculate_density(self, bools):
         total_number = len(bools) * len(bools[0])

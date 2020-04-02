@@ -3,6 +3,7 @@ from convertme import MatlabReader
 import os
 import json
 from tests import load_all_test_files
+import h5py
 
 TEST_DATA_DIR = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),

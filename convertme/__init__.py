@@ -11,3 +11,4 @@ from .burmeister.burmeister_writer import BurmeisterWriter
 from .fimi.fimi_reader import FimiReader
 from .fimi.fimi_writer import FimiWriter
 from .matlab.matlab_reader import MatlabReader
+from .matlab.matlab_writer import MatlabWriter

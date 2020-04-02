@@ -15,8 +15,9 @@ TEST_DATA_DIR = os.path.join(
 def test_matlab_reader(data_file, json_file):
     # Load dataset file
 
-    reader = MatlabReader()
-    dataset = reader.read(data_file)
+    with open(data_file, mode='rb') as f:
+        reader = MatlabReader()
+        dataset = reader.read(f)
 
     # Load expected output
     with open(json_file) as f:

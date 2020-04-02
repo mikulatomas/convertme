@@ -1,6 +1,6 @@
-=========
+===========================
 ConvertMe -- Ayoyoyo Wololo
-=========
+===========================
 
 
 .. .. image:: https://img.shields.io/pypi/v/convertme.svg
@@ -23,11 +23,12 @@ Simple dataset convertor in Python. Not released on PyPy yet.
   :target: https://www.youtube.com/watch?v=Up2eawxvTmg
 
 * Free software: MIT license
+
 .. * Documentation: https://convertme.readthedocs.io.
 
 
 Installation
------
+------------
 Install package via ``pip``:
 
 .. code:: bash
@@ -62,7 +63,7 @@ Use the provided CLI:
           --help                          Show this message and exit.
 
 Basic usage:
-----------
+------------
 Convert simple ``csv`` file to ``fimi`` format:
 
 .. code:: bash
@@ -84,14 +85,14 @@ Content of ``dataset.fimi``:
         1 3
 
 Supported formats
---------
+-----------------
 * csv
 * burmeister (.cxt)
 * fimi
 * matlab (version<=7.3)
 
 Development
-------------
+-----------
 Clone this repository to the folder, then:
 
 .. code:: bash

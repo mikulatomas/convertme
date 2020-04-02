@@ -2,7 +2,7 @@
 History
 =======
 
-0.1.0 (2020-03-23)
+0.1.0 (2020-03-24)
 ------------------
-
-* First release on PyPI.
+* Supported formats (csv, burmeister, fimi, matlab (version<=7))
+* Basic CLI implemented

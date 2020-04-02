@@ -1,0 +1,23 @@
+{
+    "objects": [
+        "firstObj",
+        "secondObj"
+    ],
+    "attributes": [
+        "firstAtt",
+        "secondAtt",
+        "thirdAtt"
+    ],
+    "bools": [
+        [
+            true,
+            false,
+            true
+        ],
+        [
+            false,
+            true,
+            false
+        ]
+    ]
+}

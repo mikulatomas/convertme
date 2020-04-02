@@ -5,9 +5,9 @@ Credits
 Development Lead
 ----------------
 
+* Radek Janoštík <radek.janostik@upol.cz>
 * Tomáš Mikula <mail@tomasmikula.cz>
-* Radek Janoštík
-* Roman Vyjídáček
+* Roman Vyjídáček <r.vyjidacek@gmail.com>
 
 Contributors
 ------------

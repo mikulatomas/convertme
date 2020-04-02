@@ -6,11 +6,11 @@ class CsvReader(ReaderInterface):
     def __init__(self, objects=None, attributes=None, set_true_values=None,
                  delimiter=',', objects_col=None, attributes_row=None):
 
-        if objects and objects_col:
+        if objects is not None and objects_col is not None:
             raise ValueError(
                 "Object labels and objects colum cannot be specified in the same time.")
 
-        if attributes and attributes_row:
+        if attributes is not None and attributes_row is not None:
             raise ValueError(
                 "Attribute labels and attribute row cannot be specified in the same time.")
 

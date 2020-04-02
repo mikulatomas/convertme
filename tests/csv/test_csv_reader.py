@@ -88,6 +88,28 @@ def test_csv_reader_attribute_labels(data_file, json_file):
     assert expected_json == json.loads(dataset.to_json())
 
 
+TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    'test_data/external_labels',
+)
+
+
+@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
+def test_csv_reader_external_labels(data_file, json_file):
+    # Load dataset file
+    with open(data_file, newline='') as f:
+        csv_reader = CsvReader(
+            objects=['obj0', 'obj1'], attributes=['attr0', 'attr1'])
+        dataset = csv_reader.read(f)
+
+    # Load expected output
+    with open(json_file) as f:
+        expected_json = json.load(f)
+
+    # Compare
+    assert expected_json == json.loads(dataset.to_json())
+
+
 def test_csv_reader_object_labels_exception():
     with pytest.raises(ValueError):
         CsvReader(objects=[0, 1, 3], objects_col=0)

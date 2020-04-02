@@ -31,10 +31,13 @@ Installation
 Install package via ``pip``:
 
 .. code:: bash
+
         $ pip install convertme
 
 Use the provided CLI:
+
 .. code:: bash
+
         $ convertme --help
         Usage: convertme [OPTIONS]
 
@@ -61,16 +64,22 @@ Use the provided CLI:
 Basic usage:
 ----------
 Convert simple ``csv`` file to ``fimi`` format:
+
 .. code:: bash
+
         $ convertme -i dataset.csv -if=csv -o dataset.fimi -of=fimi
 
 Content of ``dataset.csv``:
+
 .. code:: bash
+
         1,0,1,0
         0,1,0,1
 
 Content of ``dataset.fimi``:
+
 .. code:: bash
+
         0 2
         1 3
 

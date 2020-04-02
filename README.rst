@@ -88,7 +88,7 @@ Supported formats
 * csv
 * burmeister (.cxt)
 * fimi
-* matlab (version<=7)
+* matlab (version<=7.3)
 
 Development
 ------------

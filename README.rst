@@ -45,7 +45,8 @@ Supported formats
 * csv
 * burmeister
 * fimi
-
+* matlab (version<=7)
+  
 Credits
 -------
 

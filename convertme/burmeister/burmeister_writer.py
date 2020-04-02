@@ -9,7 +9,7 @@ class BurmeisterWriter(WriterInterface):
         content = ["B", "", str(len(dataset.objects)),
                    str(len(dataset.attributes))]
 
-        output.writelines('\n'.join(content) + '\n')
+        output.writelines('\n'.join(content) + '\n\n')
         output.writelines('\n'.join(dataset.objects) + '\n')
         output.writelines('\n'.join(dataset.attributes) + '\n')
 

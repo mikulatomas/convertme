@@ -19,12 +19,12 @@ class BurmeisterReader(ReaderInterface):
         attributes = []
 
         for i in range(0, obj_count):
-            objects.append(lines[4 + i])
+            objects.append(lines[5 + i])
 
         for i in range(0, att_count):
-            attributes.append(lines[4 + obj_count + i])
+            attributes.append(lines[5 + obj_count + i])
 
-        for i in range(obj_count + att_count + 4, len(lines)):
+        for i in range(obj_count + att_count + 5, len(lines)):
             bools.append(list(map(self.__process_char, lines[i])))
 
         return Dataset(objects, attributes, bools)

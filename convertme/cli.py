@@ -6,11 +6,11 @@ from convertme import CsvReader, CsvWriter, FimiReader, FimiWriter, BurmeisterRe
 
 @click.command()
 @click.option('-if', '--input-format',
-              type=click.Choice(['csv', 'fimi', 'burmeister', 'mat'],
+              type=click.Choice(['csv', 'fimi', 'cxt', 'mat'],
                                 case_sensitive=False),
               required=True)
 @click.option('-of', '--output-format',
-              type=click.Choice(['csv', 'fimi', 'burmeister', 'mat'],
+              type=click.Choice(['csv', 'fimi', 'cxt', 'mat'],
                                 case_sensitive=False),
               required=True)
 @click.option('-i', '--input', 'input_',
@@ -76,7 +76,7 @@ def main(input_format, output_format, input_, output_, input_delimiter,
 
     elif input_format == 'fimi':
         reader = FimiReader()
-    elif input_format == 'burmeister':
+    elif input_format == 'cxt':
         reader = BurmeisterReader()
     elif input_format == 'mat':
         reader = MatlabReader()
@@ -86,7 +86,7 @@ def main(input_format, output_format, input_, output_, input_delimiter,
         writer = CsvWriter(delimiter=output_delimiter)
     elif output_format == 'fimi':
         writer = FimiWriter()
-    elif output_format == 'burmeister':
+    elif output_format == 'cxt':
         writer = BurmeisterWriter()
     elif output_format == 'mat':
         writer = MatlabWriter()

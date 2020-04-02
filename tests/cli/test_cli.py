@@ -37,7 +37,7 @@ PARAMETERS = [('csv1.csv', 'csv1.csv', 'csv', 'csv', None, None, None, None, Non
               ('csv1.csv', 'fimi1.fimi', 'csv',
                'fimi', None, None, None, None, None, 'r'),
               ('csv1.csv', 'burmeister1.cxt', 'csv',
-               'burmeister', None, None, None, None, None, 'r'),
+               'cxt', None, None, None, None, None, 'r'),
               ('mat1.mat', 'csv8.csv', 'mat', 'csv', None, None, None, None, None, 'rb'), ]
 
 

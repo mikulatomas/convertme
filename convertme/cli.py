@@ -1,16 +1,16 @@
 """Console script for convertme."""
 import sys
 import click
-from convertme import CsvReader, CsvWriter, FimiReader, FimiWriter, BurmeisterReader, BurmeisterWriter, MatlabReader, MatlabWriter
+from convertme import CsvReader, CsvWriter, FimiReader, FimiWriter, BurmeisterReader, BurmeisterWriter, MatlabReader, MatlabWriter, CexReader, CexWriter
 
 
 @click.command()
 @click.option('-if', '--input-format',
-              type=click.Choice(['csv', 'fimi', 'cxt', 'mat'],
+              type=click.Choice(['csv', 'fimi', 'cxt', 'mat', 'cex'],
                                 case_sensitive=False),
               required=True)
 @click.option('-of', '--output-format',
-              type=click.Choice(['csv', 'fimi', 'cxt', 'mat'],
+              type=click.Choice(['csv', 'fimi', 'cxt', 'mat', 'cex'],
                                 case_sensitive=False),
               required=True)
 @click.option('-i', '--input', 'input_',
@@ -80,6 +80,8 @@ def main(input_format, output_format, input_, output_, input_delimiter,
         reader = BurmeisterReader()
     elif input_format == 'mat':
         reader = MatlabReader()
+    elif input_format == 'cex':
+        reader = CexReader()
 
     # Init writer
     if output_format == 'csv':
@@ -90,6 +92,8 @@ def main(input_format, output_format, input_, output_, input_delimiter,
         writer = BurmeisterWriter()
     elif output_format == 'mat':
         writer = MatlabWriter()
+    elif output_format == 'cex':
+        writer = CexWriter()
 
     # Do the work :)
     writer.write(reader.read(input_), output_)

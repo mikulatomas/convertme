@@ -3,7 +3,6 @@ from xml.etree.ElementTree import parse
 
 class CexReader(ReaderInterface):
 
-    # TODO add file validation ?
     def read(self, file) -> Dataset:
         tree = parse(file)
         root = tree.getroot()

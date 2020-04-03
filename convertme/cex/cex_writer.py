@@ -36,5 +36,5 @@ class CexWriter(WriterInterface):
                     xml_attr = ET.SubElement(intent, "HasAttribute")
                     xml_attr.set("AttributeIdentifier", str(attr_index))
 
-        xml_str = ET.tostring(root, encoding='unicode', method='xml', short_empty_elements=False)
+        xml_str = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + ET.tostring(root, encoding='unicode', method='xml', short_empty_elements=False)
         output.write(xml_str)

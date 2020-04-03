@@ -6,3 +6,7 @@ History
 ------------------
 * Supported formats (csv, burmeister, fimi, matlab (version<=7))
 * Basic CLI implemented
+
+0.1.1
+-----
+* Added Conexp format support

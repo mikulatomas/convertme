@@ -28,7 +28,7 @@ class CexWriter(WriterInterface):
             obj_name = ET.SubElement(xml_obj, "Name")
             obj_name.text = str(obj) 
             intent = ET.SubElement(xml_obj, "Intent")
-            # write incidency
+            # write incidency 
             for attr_index, attr in enumerate(dataset.bools[index]):
                 if attr:
                     xml_attr = ET.SubElement(intent, "HasAttribute")

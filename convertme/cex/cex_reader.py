@@ -7,6 +7,7 @@ class CexReader(ReaderInterface):
     def read(self, file) -> Dataset:
         tree = parse(file)
         root = tree.getroot()
+        # presume only one context per file
         context = root.find('Contexts').find('Context')
         
         # TODO if we are going to us only order of attributes (ie not their identifiers),
@@ -31,11 +32,10 @@ class CexReader(ReaderInterface):
         objects = []
         for obj in xml_objects.findall('Object'):
             name = obj.find('Name').text
-            objects.append(name)
-            xml_int =  obj.find('Intent')
+            objects.append(name) 
             intent = []
             # read intent
-            for attr in xml_int:
+            for attr in obj.find('Intent'):
                 intent.append(attrib_dict[attr.get('AttributeIdentifier')])
             bools.append([attrib in intent for attrib in attributes])
         
@@ -45,11 +45,13 @@ class CexReader(ReaderInterface):
         # concept-explorer ignores the identifiers and uses order in file instead
         # therefore use order for both objects and attributes?
 
-        # Moreover cex does not have to contain <RecalculationPolicy Value="Clear" />
+        # Moreover cex does not have to contain 
         # <Lattices /> and identifiers for contexts and attributes
-        # still might put them in the writer in this empty form 
-        # - at least conexp 1.5 notices if <Lattices /> is missing.
+        # or might contain some other elements (ie <RecalculationPolicy Value="Clear" />)
+        
+        # should put them in the writer in this empty form ?
+        # at least conexp 1.5 notices if <Lattices /> is missing.
+
         # It seems that only important part for us is content of <attributes> and <objects> 
         # I am still not sure how (or even if) identifiers are used.
-        # TODO cex can also contain lattice description... ignore?
         return Dataset(objects,attributes,bools,"")

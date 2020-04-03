@@ -12,7 +12,7 @@ TEST_DATA_DIR = os.path.join(
 
 @pytest.mark.parametrize("data_file, json_file",
                          load_all_test_files(TEST_DATA_DIR))
-def test_matlab_reader(data_file, json_file):
+def test_cex_reader(data_file, json_file):
     # Load dataset file
 
     with open(data_file, mode='rb') as f:

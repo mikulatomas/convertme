@@ -16,14 +16,12 @@ class CexWriter(WriterInterface):
         attributes = ET.SubElement(context, "Attributes")
         objects = ET.SubElement(context, "Objects")
         ET.SubElement(root, "Lattices")
-
         # write attributes
         for index, attr in enumerate(dataset.attributes):
             xml_attr = ET.SubElement(attributes, "Attribute")
             xml_attr.set("Identifier", str(index))
             attr_name = ET.SubElement(xml_attr, "Name")
             attr_name.text = str(attr)
-
         # wrtie objects
         for index, obj in enumerate(dataset.objects):
             xml_obj = ET.SubElement(objects, "Object")

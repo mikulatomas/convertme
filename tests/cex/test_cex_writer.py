@@ -1,5 +1,5 @@
 import pytest
-from convertme import CexWriter
+from convertme import CexWriter, Dataset
 from tests import load_all_test_files
 import os
 import json

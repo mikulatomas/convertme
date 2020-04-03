@@ -15,7 +15,7 @@ class CexWriter(WriterInterface):
         context.set("Identifier", "0")    
         attributes = ET.SubElement(context, "Attributes")
         objects = ET.SubElement(context, "Objects")
-        ET.SubElement(root, "Lattice")
+        ET.SubElement(root, "Lattices")
 
         # write attributes
         for index, attr in enumerate(dataset.attributes):
@@ -36,5 +36,5 @@ class CexWriter(WriterInterface):
                     xml_attr = ET.SubElement(intent, "HasAttribute")
                     xml_attr.set("AttributeIdentifier", str(attr_index))
 
-        xml_str = ET.tostring(root, encoding='unicode', method='xml')
+        xml_str = ET.tostring(root, encoding='unicode', method='xml', short_empty_elements=False)
         output.write(xml_str)

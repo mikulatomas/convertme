@@ -17,12 +17,14 @@ def test_cex_writer(data_file, json_file, tmp_path):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
+
         dataset = Dataset(objects=json_dict['objects'],
                           attributes=json_dict['attributes'],
                           bools=json_dict['bools'])
 
         # Write output into file
         output_path = tmp_path / 'test'
+
         with open(output_path, 'w') as output:
             writer = CexWriter()
             writer.write(dataset, output)

@@ -14,7 +14,6 @@ TEST_DATA_DIR = os.path.join(
                          load_all_test_files(TEST_DATA_DIR))
 def test_cex_reader(data_file, json_file):
     # Load dataset file
-
     with open(data_file, mode='rb') as f:
         reader = CexReader()
         dataset = reader.read(f)

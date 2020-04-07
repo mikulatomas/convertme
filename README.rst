@@ -37,7 +37,7 @@ Install package via ``pip``:
 
 Use the provided CLI:
 
-.. code:: bash
+.. code::
 
         $ convertme --help
         Usage: convertme [OPTIONS]
@@ -72,14 +72,14 @@ Convert simple ``csv`` file to ``fimi`` format:
 
 Content of ``dataset.csv``:
 
-.. code:: bash
+.. code:: 
 
         1,0,1,0
         0,1,0,1
 
 Content of ``dataset.fimi``:
 
-.. code:: bash
+.. code:: 
 
         0 2
         1 3

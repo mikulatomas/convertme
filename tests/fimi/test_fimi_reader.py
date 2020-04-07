@@ -26,8 +26,8 @@ def test_csv_reader(data_file, json_file):
     assert expected_json == json.loads(dataset.to_json())
 
 
-# def check_reader(CONTENT, tmp_path):
-#     dataset_file = tmp_path / "test_dataset.dat"
+# def check_reader(CONTENT, tmpdir):
+#     dataset_file = tmpdir / "test_dataset.dat"
 #     dataset_file.write_text(CONTENT)
 #
 #     with open(dataset_file, newline='') as fimifile:
@@ -40,36 +40,36 @@ def test_csv_reader(data_file, json_file):
 #     assert dataset.objects == ['0']
 #
 #
-# def test_fimi_reader(tmp_path):
+# def test_fimi_reader(tmpdir):
 #     CONTENT = """1 2 4"""
-#     check_reader(CONTENT, tmp_path)
+#     check_reader(CONTENT, tmpdir)
 #
 #
-# def test_fimi_reader_tabs(tmp_path):
+# def test_fimi_reader_tabs(tmpdir):
 #     CONTENT = """1\t2\t4"""
-#     check_reader(CONTENT, tmp_path)
+#     check_reader(CONTENT, tmpdir)
 #
 #
-# def test_fimi_reader_more_spaces(tmp_path):
+# def test_fimi_reader_more_spaces(tmpdir):
 #     CONTENT = """1  2      4"""
-#     check_reader(CONTENT, tmp_path)
+#     check_reader(CONTENT, tmpdir)
 #
 #
-# def test_fimi_reader_space_at_the_end(tmp_path):
+# def test_fimi_reader_space_at_the_end(tmpdir):
 #     CONTENT = """1 2 4 """
-#     check_reader(CONTENT, tmp_path)
+#     check_reader(CONTENT, tmpdir)
 #
 #
-# def test_fimi_reader_space_at_the_begining(tmp_path):
+# def test_fimi_reader_space_at_the_begining(tmpdir):
 #     CONTENT = """ 1 2 4"""
-#     check_reader(CONTENT, tmp_path)
+#     check_reader(CONTENT, tmpdir)
 #
 #
-# def test_fimi_reader_empty_line(tmp_path):
+# def test_fimi_reader_empty_line(tmpdir):
 #     CONTENT = """
 # 1 2 4
 # """
-#     dataset_file = tmp_path / "test_dataset.dat"
+#     dataset_file = tmpdir / "test_dataset.dat"
 #     dataset_file.write_text(CONTENT)
 #     with open(dataset_file, newline='') as fimifile:
 #         fimi_reader = FimiReader()
@@ -80,11 +80,11 @@ def test_csv_reader(data_file, json_file):
 #     assert dataset.attributes == list(map(str, range(5)))
 #     assert dataset.objects == ['0', '1']
 
-# def test_fimi_reader_multiline_dataset(tmp_path):
+# def test_fimi_reader_multiline_dataset(tmpdir):
 #     CONTENT = """1 2 4
 # 0 1 2 3"""
 #
-#     dataset_file = tmp_path / "test_dataset.dat"
+#     dataset_file = tmpdir / "test_dataset.dat"
 #     dataset_file.write_text(CONTENT)
 #     with open(dataset_file, newline='') as fimifile:
 #         fimi_reader = FimiReader()

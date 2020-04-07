@@ -12,7 +12,7 @@ TEST_DATA_DIR = os.path.join(
 
 @pytest.mark.parametrize("data_file, json_file",
                          load_all_test_files(TEST_DATA_DIR))
-def test_matlab_writer(data_file, json_file, tmp_path):
+def test_matlab_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -21,7 +21,7 @@ def test_matlab_writer(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'wb') as output:
             writer = MatlabWriter()
             writer.write(dataset, output)

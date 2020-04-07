@@ -12,7 +12,7 @@ TEST_DATA_DIR_NO_PARAMETER = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_NO_PARAMETER))
-def test_csv_writer(data_file, json_file, tmp_path):
+def test_csv_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -21,7 +21,7 @@ def test_csv_writer(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter()
             csv_writer.write(dataset, output)
@@ -43,7 +43,7 @@ TEST_DATA_DIR_DELIMITER = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_DELIMITER))
-def test_csv_writer_delimiter(data_file, json_file, tmp_path):
+def test_csv_writer_delimiter(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -52,7 +52,7 @@ def test_csv_writer_delimiter(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(delimiter=';')
             csv_writer.write(dataset, output)
@@ -74,7 +74,7 @@ TEST_DATA_DIR_OBJECT_LABELS = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_OBJECT_LABELS))
-def test_csv_writer_object_labels(data_file, json_file, tmp_path):
+def test_csv_writer_object_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -83,7 +83,7 @@ def test_csv_writer_object_labels(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(write_object_labels=True)
             csv_writer.write(dataset, output)
@@ -105,7 +105,7 @@ TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
-def test_csv_writer_attribute_labels(data_file, json_file, tmp_path):
+def test_csv_writer_attribute_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -114,7 +114,7 @@ def test_csv_writer_attribute_labels(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(write_attribute_labels=True)
             csv_writer.write(dataset, output)
@@ -136,7 +136,7 @@ TEST_DATA_DIR_LABELS = os.path.join(
 
 
 @pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_LABELS))
-def test_csv_writer_labels(data_file, json_file, tmp_path):
+def test_csv_writer_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
         json_dict = json.load(f)
@@ -145,7 +145,7 @@ def test_csv_writer_labels(data_file, json_file, tmp_path):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmp_path / 'test'
+        output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(
                 write_attribute_labels=True, write_object_labels=True)

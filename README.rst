@@ -43,24 +43,24 @@ Use the provided CLI:
         Usage: convertme [OPTIONS]
 
         Options:
-          -if, --input-format [csv|fimi|burmeister|mat]
-                                          [required]
-          -of, --output-format [csv|fimi|burmeister|mat]
-                                          [required]
-          -i, --input TEXT                Input file, skip it for stdin.
-          -o, --output TEXT               Output file, skip it for stdout.
-          --input-delimiter TEXT          (CSV) Delimiter of input.  [default: ,]
-          --output-delimiter TEXT         (CSV) Delimiter of output.  [default: ,]
-          --objects-col INTEGER           (CSV) Index of column with object labels,
-                                          typically 0, ignored on default.
+        -if, --input-format [csv|fimi|cxt|mat|cex]
+                                        [required]
+        -of, --output-format [csv|fimi|cxt|mat|cex]
+                                        [required]
+        -i, --input TEXT                Input file, skip it for stdin.
+        -o, --output TEXT               Output file, skip it for stdout.
+        --input-delimiter TEXT          (CSV) Delimiter of input.  [default: ,]
+        --output-delimiter TEXT         (CSV) Delimiter of output.  [default: ,]
+        --objects-col INTEGER           (CSV) Index of column with object labels,
+                                        typically 0, ignored on default.
 
-          --attributes-row INTEGER        (CSV) Index of row with attribute labels,
-                                          typically 0, ignored on default.
+        --attributes-row INTEGER        (CSV) Index of row with attribute labels,
+                                        typically 0, ignored on default.
 
-          --true-values TEXT              (CSV) Values which will be count as True,
-                                          comma separated.
+        --true-values TEXT              (CSV) Values which will be count as True,
+                                        comma separated.
 
-          --help                          Show this message and exit.
+        --help                          Show this message and exit.
 
 Basic usage:
 ------------

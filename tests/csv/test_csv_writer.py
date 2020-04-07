@@ -21,7 +21,7 @@ def test_csv_writer(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter()
             csv_writer.write(dataset, output)
@@ -52,7 +52,7 @@ def test_csv_writer_delimiter(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(delimiter=';')
             csv_writer.write(dataset, output)
@@ -83,7 +83,7 @@ def test_csv_writer_object_labels(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(write_object_labels=True)
             csv_writer.write(dataset, output)
@@ -114,7 +114,7 @@ def test_csv_writer_attribute_labels(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(write_attribute_labels=True)
             csv_writer.write(dataset, output)
@@ -145,7 +145,7 @@ def test_csv_writer_labels(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'w') as output:
             csv_writer = CsvWriter(
                 write_attribute_labels=True, write_object_labels=True)

@@ -21,7 +21,7 @@ def test_matlab_writer(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        output_path = tmpdir.join('test')
+        output_path = str(tmpdir.join('test'))
         with open(output_path, 'wb') as output:
             writer = MatlabWriter()
             writer.write(dataset, output)

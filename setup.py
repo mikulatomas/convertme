@@ -4,9 +4,9 @@
 
 from setuptools import setup, find_packages
 
-__author__ = 'Radek Janoštík, Tomáš Mikula, Roman Vyjídáček'
-__email__ = 'radek.janostik@upol.cz, mail@tomasmikula.cz, r.vyjidacek@gmail.com'
-__version__ = '0.1.0'
+__author__ = 'Radek Janoštík, Tomáš Mikula, Tomáš Urbanec, Roman Vyjídáček'
+__email__ = 'radek.janostik@upol.cz, mail@tomasmikula.cz, tomas.urbanec@upol.cz, r.vyjidacek@gmail.com'
+__version__ = '0.1.1'
 __license__ = 'MIT license'
 
 with open('README.rst') as readme_file:
@@ -47,7 +47,7 @@ setup(
     license=__license__,
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/x-rst',
-    include_package_data=True,
+    include_package_data=True, con
     keywords='convertme',
     name='convertme',
     packages=find_packages(include=['convertme', 'convertme.*']),

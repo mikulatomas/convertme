@@ -7,18 +7,13 @@ ConvertMe -- Ayoyoyo Wololo
         :target: https://pypi.python.org/pypi/convertme
 
 .. image:: https://img.shields.io/github/license/mikulatomas/convertme
+        :target: https://opensource.org/licenses/MIT
 
 .. image:: https://img.shields.io/travis/mikulatomas/convertme.svg
         :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=master
 
 .. image:: https://codecov.io/gh/mikulatomas/convertme/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/mikulatomas/convertme
-
-
-
-.. .. image:: https://readthedocs.org/projects/convertme/badge/?version=latest
-..         :target: https://convertme.readthedocs.io/en/latest/?badge=latest
-..         :alt: Documentation Status
+        :target: https://codecov.io/gh/mikulatomas/convertme
 
 
 Simple dataset convertor in Python. Currently memory hungry in case of large datasets.

@@ -22,7 +22,6 @@ def test_burmeister_writer(data_file, json_file, tmpdir):
                           bools=json_dict['bools'])
 
         # Write output into file
-        # output_path = tmp_path / 'test'
         output_path = tmpdir.join('test')
         with open(output_path, 'w') as output:
             writer = BurmeisterWriter()

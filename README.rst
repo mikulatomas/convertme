@@ -3,26 +3,26 @@ ConvertMe -- Ayoyoyo Wololo
 ===========================
 
 
-.. .. image:: https://img.shields.io/pypi/v/convertme.svg
-..         :target: https://pypi.python.org/pypi/convertme
+.. image:: https://img.shields.io/pypi/v/convertme
+        :target: https://pypi.python.org/pypi/convertme
 
 .. image:: https://img.shields.io/travis/mikulatomas/convertme.svg
-        :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=development
+        :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=master
 
-.. image:: https://codecov.io/gh/mikulatomas/convertme/branch/development/graph/badge.svg
+.. image:: https://codecov.io/gh/mikulatomas/convertme/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/mikulatomas/convertme
+
+.. image:: https://img.shields.io/github/license/mikulatomas/convertme
 
 .. .. image:: https://readthedocs.org/projects/convertme/badge/?version=latest
 ..         :target: https://convertme.readthedocs.io/en/latest/?badge=latest
 ..         :alt: Documentation Status
 
 
-Simple dataset convertor in Python. Not released on PyPy yet.
+Simple dataset convertor in Python. Currently memory hungry in case of large datasets.
 
 .. image:: https://img.youtube.com/vi/Up2eawxvTmg/0.jpg
   :target: https://www.youtube.com/watch?v=Up2eawxvTmg
-
-* Free software: MIT license
 
 .. * Documentation: https://convertme.readthedocs.io.
 
@@ -90,6 +90,7 @@ Supported formats
 * burmeister (.cxt)
 * fimi
 * matlab (version<=7.3)
+* conexp (.cex)
 
 Development
 -----------

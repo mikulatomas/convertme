@@ -1,0 +1,19 @@
+{
+    "objects": [
+        "obj0",
+        "obj1",
+        "obj2",
+	"obj3",
+	"obj4"
+    ],
+    "attributes": [
+        "attr0"
+    ],
+    "bools": [
+	[true],
+	[true],
+	[true],
+	[true],
+	[true]
+    ]
+}

@@ -47,7 +47,7 @@ setup(
     license=__license__,
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/x-rst',
-    include_package_data=True, con
+    include_package_data=True,
     keywords='convertme',
     name='convertme',
     packages=find_packages(include=['convertme', 'convertme.*']),

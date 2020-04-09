@@ -1,4 +1,5 @@
 from convertme import ReaderInterface, Dataset
+from bitarray import bitarray
 
 
 class FimiReader(ReaderInterface):
@@ -19,7 +20,7 @@ class FimiReader(ReaderInterface):
 
             rows.append(row_attributes)
 
-        bools = [[True if i in row else False for i in range(max_attribute + 1)]
+        bools = [bitarray([True if i in row else False for i in range(max_attribute + 1)])
                  for row in rows]
 
         return Dataset(list(map(str, range(len(bools)))),

@@ -4,7 +4,6 @@ from convertme import WriterInterface, Dataset
 class FimiWriter(WriterInterface):
 
     def write(self, dataset, output):
-        lines = []
 
         for row in dataset.bools:
             attributes = []
@@ -15,6 +14,4 @@ class FimiWriter(WriterInterface):
 
             # remove f last space from line
             # ' '.join() is the fastest way to concatenate string
-            lines.append(' '.join(attributes))
-
-        output.write('\n'.join(lines) + '\n')
+            output.write(' '.join(attributes) + '\n')

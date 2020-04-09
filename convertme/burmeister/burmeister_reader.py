@@ -1,4 +1,5 @@
 from convertme import ReaderInterface, Dataset
+from bitarray import bitarray
 
 
 class BurmeisterReader(ReaderInterface):
@@ -25,6 +26,6 @@ class BurmeisterReader(ReaderInterface):
             attributes.append(lines[5 + obj_count + i])
 
         for i in range(obj_count + att_count + 5, len(lines)):
-            bools.append(list(map(self.__process_char, lines[i])))
+            bools.append(bitarray(map(self.__process_char, lines[i])))
 
         return Dataset(objects, attributes, bools)

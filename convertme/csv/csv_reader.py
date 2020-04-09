@@ -1,4 +1,5 @@
 from convertme import ReaderInterface, Dataset
+from bitarray import bitarray
 import csv
 
 
@@ -17,7 +18,7 @@ class CsvReader(ReaderInterface):
         if set_true_values is None:
             set_true_values = set(['1', 1])
 
-        if type(set_true_values) is not set:
+        if not isinstance(set_true_values, set):
             raise ValueError("set_true_values must be a set.")
 
         if objects is None:
@@ -57,10 +58,10 @@ class CsvReader(ReaderInterface):
                     self.attributes = row
             else:
                 # pop object label
-                if type(self.objects_col) == int:
+                if isinstance(self.objects_col, int):
                     self.objects.append(row.pop(self.objects_col))
 
-                bools.append(list(map(self.__process_char, row)))
+                bools.append(bitarray(map(self.__process_char, row)))
 
         # generate labels if needed
         if not self.objects:

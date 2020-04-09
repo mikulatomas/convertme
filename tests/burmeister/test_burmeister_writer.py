@@ -1,6 +1,6 @@
 import pytest
 from convertme import BurmeisterWriter, Dataset
-from tests import load_all_test_files
+from tests import load_all_test_files, DatasetJSONDecoder
 import os
 import json
 from bitarray import bitarray
@@ -17,10 +17,7 @@ TEST_DATA_DIR = os.path.join(
 def test_burmeister_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))

@@ -1,6 +1,6 @@
 import pytest
 from convertme import CsvWriter, Dataset
-from tests import load_all_test_files
+from tests import load_all_test_files, DatasetJSONDecoder
 import io
 import os
 import json
@@ -17,10 +17,7 @@ TEST_DATA_DIR_NO_PARAMETER = os.path.join(
 def test_csv_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -49,10 +46,7 @@ TEST_DATA_DIR_DELIMITER = os.path.join(
 def test_csv_writer_delimiter(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -81,10 +75,7 @@ TEST_DATA_DIR_OBJECT_LABELS = os.path.join(
 def test_csv_writer_object_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -113,10 +104,7 @@ TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
 def test_csv_writer_attribute_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -145,10 +133,7 @@ TEST_DATA_DIR_LABELS = os.path.join(
 def test_csv_writer_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=list(map(bitarray, json_dict['bools'])))
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))

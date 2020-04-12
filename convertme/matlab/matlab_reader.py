@@ -2,6 +2,7 @@ from convertme import ReaderInterface, Dataset
 from mat4py import loadmat
 import h5py
 from numpy import transpose
+from bitarray import bitarray
 
 
 class MatlabReader(ReaderInterface):
@@ -17,7 +18,7 @@ class MatlabReader(ReaderInterface):
             matlab_data = {key: transpose(data).tolist()}
 
         matrix_name = next(iter(matlab_data))
-        bools = matlab_data[matrix_name]
+        bools = list(map(bitarray, matlab_data[matrix_name]))
         objects = [str(label) for label in range(len(bools))]
         attributes = [str(label) for label in range(len(bools[0]))]
         dataset = Dataset(objects, attributes, bools)

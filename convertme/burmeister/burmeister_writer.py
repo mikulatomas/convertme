@@ -13,9 +13,6 @@ class BurmeisterWriter(WriterInterface):
         output.writelines('\n'.join(dataset.objects) + '\n')
         output.writelines('\n'.join(dataset.attributes) + '\n')
 
-        data = []
-
         for row in dataset.bools:
-            data.append(''.join(list(map(self.__process_val, row))))
-
-        output.writelines('\n'.join(data) + '\n')
+            output.write(''.join(map(self.__process_val, row)))
+            output.write('\n')

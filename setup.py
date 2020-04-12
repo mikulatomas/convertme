@@ -16,7 +16,11 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 # Requirements for end-user
-requirements = ['Click>=7.0', 'mat4py>=0.4.2', 'h5py>=2.10.0']
+requirements = [
+    'Click>=7.0',
+    'mat4py>=0.4.2',
+    'h5py>=2.10.0',
+    'bitarray>=1.2.1']
 
 # Requirements for test
 setup_requirements = ['pytest-runner', ]

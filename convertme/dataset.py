@@ -1,5 +1,13 @@
 import json
+from bitarray import bitarray
 from convertme import Metadata
+
+
+class BitsetEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, bitarray):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
 
 
 class Dataset:
@@ -41,4 +49,4 @@ class Dataset:
     def to_json(self):
         return json.dumps({'objects': self.objects,
                            'attributes': self.attributes,
-                           'bools': self.bools})
+                           'bools': self.bools}, cls=BitsetEncoder)

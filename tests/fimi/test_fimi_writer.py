@@ -1,8 +1,9 @@
 import pytest
 from convertme import FimiWriter, Dataset
-from tests import load_all_test_files
+from tests import load_all_test_files, DatasetJSONDecoder
 import os
 import json
+from bitarray import bitarray
 
 TEST_DATA_DIR = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
@@ -10,14 +11,12 @@ TEST_DATA_DIR = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR))
 def test_csv_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))

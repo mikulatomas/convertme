@@ -18,7 +18,7 @@ with open('HISTORY.rst') as history_file:
 # Requirements for end-user
 requirements = [
     'Click>=7.0',
-    'mat4py>=0.4.2',
+    'mat4py>=0.4.3',
     'h5py>=2.10.0',
     'bitarray>=1.2.1']
 

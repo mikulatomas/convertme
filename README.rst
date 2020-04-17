@@ -15,6 +15,9 @@ ConvertMe -- Ayoyoyo Wololo
 .. image:: https://codecov.io/gh/mikulatomas/convertme/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/mikulatomas/convertme
 
+.. image:: https://img.shields.io/pypi/pyversions/convertme
+        :target: https://pypi.python.org/pypi/convertme
+
 
 Simple dataset convertor in Python. Currently memory hungry in case of large datasets.
 

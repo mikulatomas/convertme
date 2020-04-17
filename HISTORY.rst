@@ -11,3 +11,7 @@ History
 -----------------
 * Added Conexp format support
 * Added support of Python 3.5, 3.6
+
+0.1.2 (2020-04-17)
+------------------
+* Rewritten to bitarray under the hood (less memory needed)

@@ -1,5 +1,6 @@
 from convertme import ReaderInterface, Dataset
 from xml.etree.ElementTree import parse
+from bitarray import bitarray
 
 
 class CexReader(ReaderInterface):
@@ -42,6 +43,6 @@ class CexReader(ReaderInterface):
             for attr in obj.find('Intent'):
                 intent.append(attrib_dict[attr.get('AttributeIdentifier')])
 
-            bools.append([attrib in intent for attrib in attributes])
+            bools.append(bitarray([attrib in intent for attrib in attributes]))
 
         return Dataset(objects, attributes, bools)

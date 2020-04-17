@@ -1,9 +1,10 @@
 import pytest
 from convertme import CsvWriter, Dataset
-from tests import load_all_test_files
+from tests import load_all_test_files, DatasetJSONDecoder
 import io
 import os
 import json
+from bitarray import bitarray
 
 TEST_DATA_DIR_NO_PARAMETER = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
@@ -11,14 +12,12 @@ TEST_DATA_DIR_NO_PARAMETER = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_NO_PARAMETER))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR_NO_PARAMETER))
 def test_csv_writer(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -42,14 +41,12 @@ TEST_DATA_DIR_DELIMITER = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_DELIMITER))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR_DELIMITER))
 def test_csv_writer_delimiter(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -73,14 +70,12 @@ TEST_DATA_DIR_OBJECT_LABELS = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_OBJECT_LABELS))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR_OBJECT_LABELS))
 def test_csv_writer_object_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -104,14 +99,12 @@ TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
 def test_csv_writer_attribute_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))
@@ -135,14 +128,12 @@ TEST_DATA_DIR_LABELS = os.path.join(
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_LABELS))
+@pytest.mark.parametrize("data_file, json_file",
+                         load_all_test_files(TEST_DATA_DIR_LABELS))
 def test_csv_writer_labels(data_file, json_file, tmpdir):
     # Load test input
     with open(json_file) as f:
-        json_dict = json.load(f)
-        dataset = Dataset(objects=json_dict['objects'],
-                          attributes=json_dict['attributes'],
-                          bools=json_dict['bools'])
+        dataset = json.load(f, cls=DatasetJSONDecoder)
 
         # Write output into file
         output_path = str(tmpdir.join('test'))

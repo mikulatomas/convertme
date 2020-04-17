@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 __author__ = 'Radek Janoštík, Tomáš Mikula, Tomáš Urbanec, Roman Vyjídáček'
 __email__ = 'radek.janostik@upol.cz, mail@tomasmikula.cz, tomas.urbanec@upol.cz, r.vyjidacek@gmail.com'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __license__ = 'MIT license'
 
 with open('README.rst') as readme_file:
@@ -16,7 +16,11 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 # Requirements for end-user
-requirements = ['Click>=7.0', 'mat4py>=0.4.2', 'h5py>=2.10.0']
+requirements = [
+    'Click>=7.0',
+    'mat4py>=0.4.3',
+    'h5py>=2.10.0',
+    'bitarray>=1.2.1']
 
 # Requirements for test
 setup_requirements = ['pytest-runner', ]

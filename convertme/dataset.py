@@ -36,17 +36,20 @@ class Dataset:
                 raise ValueError("rows in bools cannot be empty")
 
         if len(objects) != len(bools):
-            raise ValueError(
-                "number of objects is not equal to number of rows")
+            raise ValueError("number of objects is not equal to number of rows")
 
         if len(attributes) != len(bools[0]):
-            raise ValueError(
-                "number of attributes is not equal to number of columns")
+            raise ValueError("number of attributes is not equal to number of columns")
 
         self.metadata = Metadata(objects, attributes, bools, src_url)
         self.bools = bools
 
     def to_json(self):
-        return json.dumps({'objects': self.objects,
-                           'attributes': self.attributes,
-                           'bools': self.bools}, cls=BitsetEncoder)
+        return json.dumps(
+            {
+                "objects": self.objects,
+                "attributes": self.attributes,
+                "bools": self.bools,
+            },
+            cls=BitsetEncoder,
+        )

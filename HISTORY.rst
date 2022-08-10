@@ -15,3 +15,9 @@ History
 0.1.2 (2020-04-17)
 ------------------
 * Rewritten to bitarray under the hood (less memory needed)
+
+0.1.3 (2022-08-10)
+------------------
+* Fimi: attributes are not required to start from zero
+* Added support for Python 3.9, 3.10
+* Drop support for Python 3.5

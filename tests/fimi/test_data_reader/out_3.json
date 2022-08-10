@@ -1,0 +1,26 @@
+{
+    "objects": [
+        "0",
+        "1"
+    ],
+    "attributes": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "bools": [
+        [
+            true,
+            true,
+            false,
+            true
+        ],
+        [
+            true,
+            false,
+            true,
+            false
+        ]
+    ]
+}

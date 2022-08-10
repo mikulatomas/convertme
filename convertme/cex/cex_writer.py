@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 
 
 class CexWriter(WriterInterface):
-
     def write(self, dataset, output):
         # basic cex structure
         root = ET.Element("ConceptualSystem")
@@ -45,9 +44,10 @@ class CexWriter(WriterInterface):
                     xml_attr = ET.SubElement(intent, "HasAttribute")
                     xml_attr.set("AttributeIdentifier", str(attr_index))
 
-        xml_header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+        xml_header = '<?xml version="1.0" encoding="UTF-8"?>'
 
-        xml_str = ET.tostring(root, encoding='unicode',
-                              method='xml', short_empty_elements=False)
+        xml_str = ET.tostring(
+            root, encoding="unicode", method="xml", short_empty_elements=False
+        )
 
         output.write(xml_header + xml_str)

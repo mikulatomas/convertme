@@ -6,13 +6,12 @@ from bitarray import bitarray
 
 
 class MatlabReader(ReaderInterface):
-
     def read(self, file):
 
         try:
             matlab_data = loadmat(file)
         except BaseException:
-            f = h5py.File(file, 'r')
+            f = h5py.File(file, "r")
             key = list(f.keys())[0]
             data = f[key]
             matlab_data = {key: transpose(data).tolist()}

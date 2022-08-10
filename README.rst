@@ -9,8 +9,8 @@ ConvertMe -- Ayoyoyo Wololo
 .. image:: https://img.shields.io/github/license/mikulatomas/convertme
         :target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/travis/mikulatomas/convertme.svg
-        :target: https://travis-ci.org/mikulatomas/convertme.svg?branch=master
+.. image:: https://github.com/mikulatomas/convertme/actions/workflows/build.yml/badge.svg?branch=master
+        :target: https://github.com/mikulatomas/convertme/actions/workflows/build.yml?query=branch%3Amaster
 
 .. image:: https://codecov.io/gh/mikulatomas/convertme/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/mikulatomas/convertme
@@ -107,11 +107,3 @@ Clone this repository to the folder, then:
         $ pip install -e .
 
         $ python setup.py test
-  
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

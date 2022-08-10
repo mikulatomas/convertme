@@ -4,19 +4,28 @@ import csv
 
 
 class CsvReader(ReaderInterface):
-    def __init__(self, objects=None, attributes=None, set_true_values=None,
-                 delimiter=',', objects_col=None, attributes_row=None):
+    def __init__(
+        self,
+        objects=None,
+        attributes=None,
+        set_true_values=None,
+        delimiter=",",
+        objects_col=None,
+        attributes_row=None,
+    ):
 
         if objects is not None and objects_col is not None:
             raise ValueError(
-                "Object labels and objects colum cannot be specified in the same time.")
+                "Object labels and objects colum cannot be specified in the same time."
+            )
 
         if attributes is not None and attributes_row is not None:
             raise ValueError(
-                "Attribute labels and attribute row cannot be specified in the same time.")
+                "Attribute labels and attribute row cannot be specified in the same time."
+            )
 
         if set_true_values is None:
-            set_true_values = set(['1', 1])
+            set_true_values = set(["1", 1])
 
         if not isinstance(set_true_values, set):
             raise ValueError("set_true_values must be a set.")

@@ -7,13 +7,15 @@ from bitarray import bitarray
 
 class DatasetJSONDecoder(json.JSONDecoder):
     def __init__(self, *args, **kwargs):
-        json.JSONDecoder.__init__(
-            self, object_hook=self.object_hook, *args, **kwargs)
+        json.JSONDecoder.__init__(self, object_hook=self.object_hook, *args, **kwargs)
 
     def object_hook(self, dct):
-        if 'objects' in dct and 'attributes' in dct and 'bools' in dct:
-            dataset = Dataset(objects=dct['objects'], attributes=dct['attributes'], bools=list(
-                map(bitarray, dct['bools'])))
+        if "objects" in dct and "attributes" in dct and "bools" in dct:
+            dataset = Dataset(
+                objects=dct["objects"],
+                attributes=dct["attributes"],
+                bools=list(map(bitarray, dct["bools"])),
+            )
             return dataset
         return dct
 

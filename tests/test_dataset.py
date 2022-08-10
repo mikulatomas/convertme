@@ -34,10 +34,28 @@ def test_attributes_not_match():
         Dataset([0, 1], [1], [bitarray([True, False]), bitarray([True, True])])
 
 
-@pytest.mark.parametrize("objects,attributes,bools", [([0], [1, 2], [bitarray([True, True])]),
-                                                      ([0, 1, 2], [1, 2], [
-                                                       bitarray([True, True]), bitarray([True, False]), bitarray([False, True])]),
-                                                      ([0], [1], [bitarray([True, ])])])
+@pytest.mark.parametrize(
+    "objects,attributes,bools",
+    [
+        ([0], [1, 2], [bitarray([True, True])]),
+        (
+            [0, 1, 2],
+            [1, 2],
+            [bitarray([True, True]), bitarray([True, False]), bitarray([False, True])],
+        ),
+        (
+            [0],
+            [1],
+            [
+                bitarray(
+                    [
+                        True,
+                    ]
+                )
+            ],
+        ),
+    ],
+)
 def test_dataset_to_json(objects, attributes, bools):
     objects = [0]
     attributes = [1, 2]
@@ -46,4 +64,7 @@ def test_dataset_to_json(objects, attributes, bools):
     json_string = Dataset(objects, attributes, bools).to_json()
 
     assert json.loads(json_string) == {
-        'objects': objects, 'attributes': attributes, 'bools': bools}
+        "objects": objects,
+        "attributes": attributes,
+        "bools": bools,
+    }

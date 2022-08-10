@@ -3,16 +3,15 @@ from bitarray import bitarray
 
 
 class BurmeisterReader(ReaderInterface):
-
     def __process_char(self, char):
-        return char == 'X' or char == 'x'
+        return char == "X" or char == "x"
 
     def read(self, file):
         bools = []
         lines = file.read().splitlines()
 
         if lines[0] != "B":
-            raise ValueError("First line has to be \"B\"")
+            raise ValueError('First line has to be "B"')
 
         obj_count = int(lines[2])
         att_count = int(lines[3])

@@ -6,14 +6,16 @@ from tests import load_all_test_files
 
 TEST_DATA_DIR_NO_PARAMETER = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/no_parameter',
+    "test_data/no_parameter",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_NO_PARAMETER))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_NO_PARAMETER)
+)
 def test_csv_reader(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
+    with open(data_file, newline="") as f:
         csv_reader = CsvReader()
         dataset = csv_reader.read(f)
 
@@ -27,15 +29,17 @@ def test_csv_reader(data_file, json_file):
 
 TEST_DATA_DIR_DELIMITER = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/delimiter',
+    "test_data/delimiter",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_DELIMITER))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_DELIMITER)
+)
 def test_csv_reader_delimiter(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
-        csv_reader = CsvReader(delimiter=';')
+    with open(data_file, newline="") as f:
+        csv_reader = CsvReader(delimiter=";")
         dataset = csv_reader.read(f)
 
     # Load expected output
@@ -48,14 +52,16 @@ def test_csv_reader_delimiter(data_file, json_file):
 
 TEST_DATA_DIR_OBJECT_LABELS = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/object_labels',
+    "test_data/object_labels",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_OBJECT_LABELS))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_OBJECT_LABELS)
+)
 def test_csv_reader_object_labels(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
+    with open(data_file, newline="") as f:
         csv_reader = CsvReader(objects_col=0)
         dataset = csv_reader.read(f)
 
@@ -69,14 +75,16 @@ def test_csv_reader_object_labels(data_file, json_file):
 
 TEST_DATA_DIR_LABELS = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/labels',
+    "test_data/labels",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_LABELS))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_LABELS)
+)
 def test_csv_reader_labels(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
+    with open(data_file, newline="") as f:
         csv_reader = CsvReader(objects_col=0, attributes_row=0)
         dataset = csv_reader.read(f)
 
@@ -90,14 +98,16 @@ def test_csv_reader_labels(data_file, json_file):
 
 TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/attribute_labels',
+    "test_data/attribute_labels",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS)
+)
 def test_csv_reader_attribute_labels(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
+    with open(data_file, newline="") as f:
         csv_reader = CsvReader(attributes_row=0)
         dataset = csv_reader.read(f)
 
@@ -111,16 +121,17 @@ def test_csv_reader_attribute_labels(data_file, json_file):
 
 TEST_DATA_DIR_ATTRIBUTE_LABELS = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
-    'test_data/external_labels',
+    "test_data/external_labels",
 )
 
 
-@pytest.mark.parametrize("data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS))
+@pytest.mark.parametrize(
+    "data_file, json_file", load_all_test_files(TEST_DATA_DIR_ATTRIBUTE_LABELS)
+)
 def test_csv_reader_external_labels(data_file, json_file):
     # Load dataset file
-    with open(data_file, newline='') as f:
-        csv_reader = CsvReader(
-            objects=['obj0', 'obj1'], attributes=['attr0', 'attr1'])
+    with open(data_file, newline="") as f:
+        csv_reader = CsvReader(objects=["obj0", "obj1"], attributes=["attr0", "attr1"])
         dataset = csv_reader.read(f)
 
     # Load expected output

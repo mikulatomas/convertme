@@ -21,3 +21,7 @@ History
 * Fimi: attributes are not required to start from zero
 * Added support for Python 3.9, 3.10
 * Drop support for Python 3.5
+
+0.1.4 (2022-08-10)
+------------------
+* Fix instalation error
